@@ -9,7 +9,7 @@ def get_api_instance(token='', api_root_url=None, timeout=3, resource_class=reso
         'Authorization': 'Bearer {}'.format(token),
         'Content-Type': 'application/json'
     }
-    projects_dsyms_upload_headers = {
+    file_upload_headers = {
         'Authorization': 'Bearer {}'.format(token),
         'Content-Type': 'multipart/form-data'
     }
@@ -24,7 +24,7 @@ def get_api_instance(token='', api_root_url=None, timeout=3, resource_class=reso
     api.add_resource(resource_name='projects_dsyms', resource_class=getattr(resource_class, 'ProjectsDsyms'))
     api.add_resource(
         resource_name='projects_dsyms_upload', resource_class=getattr(resource_class, 'ProjectsDsymsUpload'),
-        json_encode_body=False, headers=projects_dsyms_upload_headers
+        json_encode_body=False, headers=file_upload_headers
     )
     api.add_resource(resource_name='projects_hooks', resource_class=getattr(resource_class, 'ProjectsHooks'))
     api.add_resource(resource_name='projects_keys', resource_class=getattr(resource_class, 'ProjectsKeys'))
@@ -40,9 +40,33 @@ def get_api_instance(token='', api_root_url=None, timeout=3, resource_class=reso
         resource_class=getattr(resource_class, 'OrganizationsReleasesDeploys')
     )
     api.add_resource(
+        resource_name='organizations_releases_file_upload',
+        resource_class=getattr(resource_class, 'OrganizationsReleasesFileUpload'), json_encode_body=False,
+        headers=file_upload_headers
+    )
+    api.add_resource(
         resource_name='organizations_releases_files',
         resource_class=getattr(resource_class, 'OrganizationsReleasesFiles')
     )
+    api.add_resource(
+        resource_name='projects_releases',
+        resource_class=getattr(resource_class, 'ProjectsReleases')
+    )
+    api.add_resource(
+        resource_name='projects_releases_file_upload',
+        resource_class=getattr(resource_class, 'ProjectsReleasesFileUpload'), json_encode_body=False,
+        headers=file_upload_headers
+    )
+    api.add_resource(
+        resource_name='projects_releases_files',
+        resource_class=getattr(resource_class, 'ProjectsReleasesFiles')
+    )
+    api.add_resource(
+        resource_name='organizations_teams',
+        resource_class=getattr(resource_class, 'OrganizationsTeams')
+    )
+    api.add_resource(resource_name='teams', resource_class=getattr(resource_class, 'Teams'))
+    api.add_resource(resource_name='teams_projects', resource_class=getattr(resource_class, 'TeamsProjects'))
     return api
 
 

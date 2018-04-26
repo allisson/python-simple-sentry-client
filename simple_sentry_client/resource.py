@@ -8,11 +8,11 @@ class Issues(Resource):
 
 
 class ProjectIssues(Resource):
-    actions = actions.project_issues_actions
+    actions = actions.projects_issues_actions
 
 
 class ProjectEvents(Resource):
-    actions = actions.project_events_actions
+    actions = actions.projects_events_actions
 
 
 class Organizations(Resource):
@@ -51,5 +51,33 @@ class OrganizationsReleasesDeploys(Resource):
     actions = actions.organizations_releases_deploys_actions
 
 
+class OrganizationsReleasesFileUpload(Resource):
+    actions = actions.organizations_releases_file_upload_actions
+
+
 class OrganizationsReleasesFiles(Resource):
     actions = actions.organizations_releases_files_actions
+
+
+class ProjectsReleases(Resource):
+    actions = actions.projects_releases_actions
+
+
+class ProjectsReleasesFileUpload(Resource):
+    actions = actions.projects_releases_file_upload_actions
+
+
+class ProjectsReleasesFiles(Resource):
+    actions = actions.projects_releases_files_actions
+
+
+class OrganizationsTeams(Resource):
+    actions = actions.organizations_teams_actions
+
+
+class Teams(Resource):
+    actions = actions.teams_actions
+
+
+class TeamsProjects(Resource):
+    actions = actions.teams_projects_actions

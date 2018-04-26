@@ -36,7 +36,7 @@ issues_actions = {
         'url': 'issues/{}/tags/{}/values/',
     },
 }
-project_issues_actions = {
+projects_issues_actions = {
     'list': {
         'method': 'GET',
         'url': 'projects/{}/{}/issues/'
@@ -50,7 +50,7 @@ project_issues_actions = {
         'url': 'projects/{}/{}/issues/',
     },
 }
-project_events_actions = {
+projects_events_actions = {
     'list': {
         'method': 'GET',
         'url': 'projects/{}/{}/events/'
@@ -234,13 +234,15 @@ organizations_releases_deploys_actions = {
         'url': 'organizations/{}/releases/{}/deploys/'
     },
 }
+organizations_releases_file_upload_actions = {
+    'create': {
+        'method': 'POST',
+        'url': 'organizations/{}/releases/{}/files/'
+    },
+}
 organizations_releases_files_actions = {
     'list': {
         'method': 'GET',
-        'url': 'organizations/{}/releases/{}/files/'
-    },
-    'create': {
-        'method': 'POST',
         'url': 'organizations/{}/releases/{}/files/'
     },
     'retrieve': {
@@ -254,5 +256,77 @@ organizations_releases_files_actions = {
     'destroy': {
         'method': 'DELETE',
         'url': 'organizations/{}/releases/{}/files/{}/'
+    },
+}
+projects_releases_actions = {
+    'commits': {
+        'method': 'GET',
+        'url': 'projects/{}/{}/releases/{}/commits/'
+    },
+    'resolved': {
+        'method': 'GET',
+        'url': 'projects/{}/{}/releases/{}/resolved/'
+    },
+}
+projects_releases_file_upload_actions = {
+    'create': {
+        'method': 'POST',
+        'url': 'projects/{}/{}/releases/{}/files/'
+    },
+}
+projects_releases_files_actions = {
+    'list': {
+        'method': 'GET',
+        'url': 'projects/{}/{}/releases/{}/files/'
+    },
+    'retrieve': {
+        'method': 'GET',
+        'url': 'projects/{}/{}/releases/{}/files/{}/'
+    },
+    'update': {
+        'method': 'PUT',
+        'url': 'projects/{}/{}/releases/{}/files/{}/'
+    },
+    'destroy': {
+        'method': 'DELETE',
+        'url': 'projects/{}/{}/releases/{}/files/{}/'
+    },
+}
+organizations_teams_actions = {
+    'list': {
+        'method': 'GET',
+        'url': 'organizations/{}/teams/'
+    },
+    'create': {
+        'method': 'POST',
+        'url': 'organizations/{}/teams/'
+    },
+}
+teams_actions = {
+    'retrieve': {
+        'method': 'GET',
+        'url': 'teams/{}/{}/'
+    },
+    'update': {
+        'method': 'PUT',
+        'url': 'teams/{}/{}/'
+    },
+    'destroy': {
+        'method': 'DELETE',
+        'url': 'teams/{}/{}/'
+    },
+    'stats': {
+        'method': 'GET',
+        'url': 'teams/{}/{}/stats/'
+    },
+}
+teams_projects_actions = {
+    'list': {
+        'method': 'GET',
+        'url': 'teams/{}/{}/projects/'
+    },
+    'create': {
+        'method': 'POST',
+        'url': 'teams/{}/{}/projects/'
     },
 }
